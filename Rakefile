@@ -31,14 +31,11 @@ task :gem do
     s.version   = JSON.parse(File.read('package.json'))["version"]
     s.date      = Time.now.strftime("%Y-%m-%d")
 
-    s.homepage    = "http://jashkenas.github.com/coffee-script/"
-    s.summary     = "The CoffeeScript Compiler"
+    s.homepage    = "http://disnetdev.com/contracts.coffee/"
+    s.summary     = "The CoffeeScript Compiler with Contracts"
     s.description = <<-EOS
-      CoffeeScript is a little language that compiles into JavaScript.
-      Underneath all of those embarrassing braces and semicolons,
-      JavaScript has always had a gorgeous object model at its heart.
-      CoffeeScript is an attempt to expose the good parts of JavaScript
-      in a simple way.
+      Contracts.coffee is a dialect of CoffeeScript with built-in support for contracts.
+      CoffeeScript is JavaScript without all the embarrassing braces and semicolons.
     EOS
 
     s.files = [
@@ -46,12 +43,12 @@ task :gem do
       'lib/coffee_script/source.rb'
     ]
 
-    s.authors           = ['Jeremy Ashkenas']
-    s.email             = 'jashkenas@gmail.com'
-    s.rubyforge_project = 'coffee-script-source'
+    s.authors           = ['Greg Weber', 'Tim Disney', 'Jeremy Ashkenas']
+    s.email             = 'greg@gregweber.info'
+    s.rubyforge_project = 'contracts.coffee-source'
   end
 
-  file = File.open("coffee-script-source.gem", "w")
+  file = File.open("contracts.coffee-source.gem", "w")
   Gem::Package.open(file, 'w') do |pkg|
     pkg.metadata = gemspec.to_yaml
 
