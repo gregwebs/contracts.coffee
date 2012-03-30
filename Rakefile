@@ -27,7 +27,7 @@ task :gem do
   require 'rubygems/package'
 
   gemspec = Gem::Specification.new do |s|
-    s.name      = 'coffee-script-source'
+    s.name      = 'contracts.coffee-source'
     s.version   = JSON.parse(File.read('package.json'))["version"]
     s.date      = Time.now.strftime("%Y-%m-%d")
 
